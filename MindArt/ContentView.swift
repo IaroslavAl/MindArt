@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject
+    var mindArtViewModel = MindArtViewModel()
+
+    @StateObject
+    var languageSetting = LanguageSetting()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        MindArtView(
+            viewModel: mindArtViewModel,
+            languageSetting: languageSetting
+        )
+        .environment(\.locale, languageSetting.locale)
     }
 }
 
