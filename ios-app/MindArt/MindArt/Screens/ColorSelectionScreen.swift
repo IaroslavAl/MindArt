@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ColorSelectionScreen: View {
-    @ObservedObject
-    var viewModel: MindArtViewModel
+    @EnvironmentObject
+    private var viewModel: MindArtViewModel
 
-    @ObservedObject
-    var languageSetting: LanguageSetting
+    @EnvironmentObject
+    private var languageSetting: LanguageSetting
 
     var body: some View {
         VStack(spacing: .zero) {
@@ -97,8 +97,7 @@ private extension ColorSelectionScreen {
 }
 
 #Preview {
-    ColorSelectionScreen(
-        viewModel: .init(),
-        languageSetting: .init()
-    )
+    ColorSelectionScreen()
+        .environmentObject(MindArtViewModel())
+        .environmentObject(LanguageSetting())
 }

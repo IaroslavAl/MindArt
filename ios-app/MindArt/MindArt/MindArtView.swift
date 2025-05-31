@@ -16,6 +16,8 @@ struct MindArtView: View {
 
     var body: some View {
         screens
+            .environmentObject(viewModel)
+            .environmentObject(languageSetting)
             .environment(\.locale, languageSetting.locale)
             .overlay(alignment: .top) {
                 progressBar
@@ -48,40 +50,19 @@ private extension MindArtView {
     var screens: some View {
         switch viewModel.screenState {
         case .createdContentSelectionScreen:
-            CreatedContentSelectionScreen(
-                viewModel: viewModel,
-                languageSetting: languageSetting
-            )
+            CreatedContentSelectionScreen()
         case .disclaimerScreen:
-            DisclaimerScreen(
-                viewModel: viewModel,
-                languageSetting: languageSetting
-            )
+            DisclaimerScreen()
         case .colorSelectionScreenFirst:
-            ColorSelectionScreen(
-                viewModel: viewModel,
-                languageSetting: languageSetting
-            )
+            ColorSelectionScreen()
         case .colorSelectionScreenSecond:
-            ColorSelectionScreen(
-                viewModel: viewModel,
-                languageSetting: languageSetting
-            )
+            ColorSelectionScreen()
         case .colorSelectionScreenThird:
-            ColorSelectionScreen(
-                viewModel: viewModel,
-                languageSetting: languageSetting
-            )
+            ColorSelectionScreen()
         case .pictureStyleSelectionScreen:
-            PictureStyleSelectionScreen(
-                viewModel: viewModel,
-                languageSetting: languageSetting
-            )
+            PictureStyleSelectionScreen()
         case .resultScreen:
-            ResultScreen(
-                viewModel: viewModel,
-                languageSetting: languageSetting
-            )
+            ResultScreen()
         }
     }
 }

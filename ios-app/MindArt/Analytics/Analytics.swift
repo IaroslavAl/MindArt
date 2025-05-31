@@ -8,10 +8,10 @@
 import AppMetricaCore
 import Foundation
 
-public struct Analytics {
-    public static func log(name: String, parameters: [AnyHashable: Any]? = nil) {
-    #if !DEBUG
-        AppMetrica.reportEvent(name: name, parameters: parameters)
-    #endif
+struct Analytics {
+    static func log(name: String, parameters: [AnyHashable: Any]? = nil) {
+        #if !DEBUG
+            AppMetrica.reportEvent(name: name, parameters: parameters)
+        #endif
     }
 }

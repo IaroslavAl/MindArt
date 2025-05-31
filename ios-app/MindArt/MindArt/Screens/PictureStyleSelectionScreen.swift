@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct PictureStyleSelectionScreen: View {
-    @ObservedObject
-    var viewModel: MindArtViewModel
+    @EnvironmentObject
+    private var viewModel: MindArtViewModel
 
-    @ObservedObject
-    var languageSetting: LanguageSetting
+    @EnvironmentObject
+    private var languageSetting: LanguageSetting
 
     var body: some View {
         VStack(spacing: .zero) {
@@ -59,8 +59,7 @@ private extension PictureStyleSelectionScreen {
 }
 
 #Preview {
-    PictureStyleSelectionScreen(
-        viewModel: .init(),
-        languageSetting: .init()
-    )
+    PictureStyleSelectionScreen()
+        .environmentObject(MindArtViewModel())
+        .environmentObject(LanguageSetting())
 }

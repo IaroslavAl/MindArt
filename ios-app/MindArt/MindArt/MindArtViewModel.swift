@@ -116,14 +116,16 @@ private extension MindArtViewModel {
     func loadImageData() {
         Task {
             do {
-                let service = Service()
-                let data = try await service.loadImage(
+                let service = NetworkService()
+                print(#function, "generateImage")
+                let imageData = try await service.generateImage(
                     color1: color1 ?? "",
                     color2: color2 ?? "",
                     color3: color3 ?? "",
                     style: style ?? ""
                 )
-                writeData(data)
+                print(#function, "writeData")
+                writeData(imageData)
                 resultScreenState = .loaded
             } catch {
                 let randomNumber = Int.random(in: 0...9)

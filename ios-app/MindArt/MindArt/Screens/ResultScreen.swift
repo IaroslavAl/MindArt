@@ -9,11 +9,11 @@ import SwiftUI
 import Lottie
 
 struct ResultScreen: View {
-    @ObservedObject
-    var viewModel: MindArtViewModel
+    @EnvironmentObject
+    private var viewModel: MindArtViewModel
 
-    @ObservedObject
-    var languageSetting: LanguageSetting
+    @EnvironmentObject
+    private var languageSetting: LanguageSetting
 
     var body: some View {
         Group {
@@ -109,8 +109,7 @@ private extension ResultScreen {
 }
 
 #Preview {
-    ResultScreen(
-        viewModel: .init(),
-        languageSetting: .init()
-    )
+    ResultScreen()
+        .environmentObject(MindArtViewModel())
+        .environmentObject(LanguageSetting())
 }

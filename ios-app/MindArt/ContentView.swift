@@ -9,10 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject
-    var mindArtViewModel = MindArtViewModel()
+    private var mindArtViewModel = MindArtViewModel()
 
     @StateObject
-    var languageSetting = LanguageSetting()
+    private var languageSetting = LanguageSetting()
 
     var body: some View {
         MindArtView(

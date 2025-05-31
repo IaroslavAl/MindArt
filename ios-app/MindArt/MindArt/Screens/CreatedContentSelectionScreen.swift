@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct CreatedContentSelectionScreen: View {
-    @ObservedObject
-    var viewModel: MindArtViewModel
+    @EnvironmentObject
+    private var viewModel: MindArtViewModel
 
-    @ObservedObject
-    var languageSetting: LanguageSetting
+    @EnvironmentObject
+    private var languageSetting: LanguageSetting
 
     var body: some View {
         VStack(spacing: .zero) {
@@ -85,8 +85,7 @@ private extension CreatedContentSelectionScreen {
 }
 
 #Preview {
-    CreatedContentSelectionScreen(
-        viewModel: .init(),
-        languageSetting: .init()
-    )
+    CreatedContentSelectionScreen()
+        .environmentObject(MindArtViewModel())
+        .environmentObject(LanguageSetting())
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LanguageSetting: ObservableObject {
+final class LanguageSetting: ObservableObject {
     @Published private(set) var locale: Locale
 
     init() {
