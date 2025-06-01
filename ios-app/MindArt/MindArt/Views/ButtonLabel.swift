@@ -32,3 +32,8 @@ struct ButtonLabel: View {
             .tracking(3)
     }
 }
+
+#Preview {
+    ButtonLabel("ButtonText")
+        .padding()
+}
