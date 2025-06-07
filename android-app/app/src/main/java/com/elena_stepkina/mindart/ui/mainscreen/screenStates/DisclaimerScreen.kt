@@ -1,5 +1,6 @@
 package com.elena_stepkina.mindart.ui.mainscreen.screenStates
 
+import Elena.Stepkina.MindArt.R
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -8,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.elena_stepkina.mindart.ui.mainscreen.MainViewModel
 import com.elena_stepkina.mindart.ui.mainscreen.components.ButtonLabel
@@ -23,9 +25,9 @@ fun DisclaimerScreen(viewModel: MainViewModel) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(modifier = Modifier)
-        TextView(text = "As a rule, the first answer is usually the most correct. Don't dwell on the questions for too long, try to visualize. Colors may repeat. Don't think about combinations, just choose what you like.")
+        TextView(stringResource(R.string.disclaimer_info))
         ButtonLabel(
-            text = "continue",
+            text = stringResource(R.string.disclaimer_continue),
             onClick = { viewModel.goToNext() }
         )
         Spacer(modifier = Modifier)

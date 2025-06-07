@@ -1,3 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MindArt</string>
+
+    <string name="color_selection_goal_first_question">When you envision your goal, what color immediately comes to mind?</string>
+    <string name="color_selection_goal_second_question">Envision what inspires you on the path to achieving your goal. What color is your inspiration?</string>
+    <string name="color_selection_goal_third_question">You achieve your goal while maintaining life balance. Your life is filled in all aspects. What color represents the harmony of your life?</string>
+
+    <string name="color_selection_memories_first_question">When you recall this event, what color immediately comes to mind?</string>
+    <string name="color_selection_memories_second_question">What color was your clothing?</string>
+    <string name="color_selection_memories_third_question">Were there other people there? What color were their clothes?</string>
+
+    <string name="created_content_goal">Goal</string>
+    <string name="created_content_memories">Memories</string>
+    <string name="created_content_message">What do you want to create?</string>
+
+    <string name="disclaimer_continue">Continue</string>
+    <string name="disclaimer_info">As a rule, the first answer is usually the most correct. Do not dwell on the questions for too long, try to visualize. Colors may repeat. Do not think about combinations, just choose what you like.</string>
+
+    <string name="language_en">EN</string>
+    <string name="language_en_full">English</string>
+    <string name="language_ru">RU</string>
+    <string name="language_ru_full">Russian</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="picture_style_question">How would you characterize this event:</string>
+    <string name="picture_style_light">Light</string>
+    <string name="picture_style_significant">Significant</string>
+    <string name="picture_style_dynamic">Dynamic</string>
+    <string name="picture_style_tender">Tender</string>
+
+    <string name="result_download">Download</string>
+    <string name="result_image_creating">image creating…</string>
+    <string name="result_repeat">Repeat</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.elena_stepkina.mindart.ui.mainscreen.screenStates
 
+import Elena.Stepkina.MindArt.R
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -7,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.elena_stepkina.mindart.model.EventType
 import com.elena_stepkina.mindart.ui.mainscreen.MainViewModel
@@ -23,15 +25,13 @@ fun PictureStyleSelectionScreen(viewModel: MainViewModel) {
         verticalArrangement = Arrangement.SpaceBetween
     ) {
         Spacer(modifier = Modifier)
-
-        TextView(text = "How would you characterize this event:")
-
+        TextView(stringResource(R.string.picture_style_question))
         Buttons(
             onEventSelected = { _ ->
+                // заменить
                 viewModel.goToNext()
             }
         )
-
         Spacer(modifier = Modifier)
     }
 }
@@ -48,19 +48,19 @@ fun Buttons(onEventSelected: (EventType) -> Unit) {
 //            }
 //        }
         ButtonLabel(
-            text = "Light",
+            text = stringResource(R.string.picture_style_light),
             onClick = { onEventSelected(EventType.Light) }
         )
         ButtonLabel(
-            text = "Significant",
+            text = stringResource(R.string.picture_style_significant),
             onClick = { onEventSelected(EventType.Significant) }
         )
         ButtonLabel(
-            text = "Dynamic",
+            text = stringResource(R.string.picture_style_dynamic),
             onClick = { onEventSelected(EventType.Dynamic) }
         )
         ButtonLabel(
-            text = "Tender",
+            text = stringResource(R.string.picture_style_tender),
             onClick = { onEventSelected(EventType.Tender) }
         )
     }

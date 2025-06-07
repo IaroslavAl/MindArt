@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MindArt</string>
+
+    <string name="color_selection_goal_first_question">Когда Вы представляете свою цель, какой цвет сразу же приходит Вам в голову?</string>
+    <string name="color_selection_goal_second_question">Представьте то, что Вас вдохновляет на пути к достижению цели. Какого цвета ваше вдохновение?</string>
+    <string name="color_selection_goal_third_question">Вы получаете цель, и при этом сохраняете баланс жизни. Ваша жизнь наполнена во всех аспектах. Какого цвета гармония Вашей жизни?</string>
+
+    <string name="color_selection_memories_first_question">Когда вы вспоминаете это событие, какой цвет сразу же приходит вам в голову?</string>
+    <string name="color_selection_memories_second_question">Какого цвета была одежда у Вас?</string>
+    <string name="color_selection_memories_third_question">Были ли там еще люди? Какого цвета была одежда на них?</string>
+
+    <string name="created_content_goal">Цель</string>
+    <string name="created_content_memories">Воспоминания</string>
+    <string name="created_content_message">Что вы хотите создать?</string>
+
+    <string name="disclaimer_continue">Продолжить</string>
+    <string name="disclaimer_info">Как правило, первый ответ самый верный. Не думайте над вопросами долго, старайтесь представить. Цвета могут повторяться. Не думайте о сочетании, просто выбирайте то, что нравится.</string>
+
+    <string name="language_en">EN</string>
+    <string name="language_en_full">Английский</string>
+    <string name="language_ru">RU</string>
+    <string name="language_ru_full">Русский</string>
+
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+
+    <string name="picture_style_question">Как бы вы охарактеризовали это событие:</string>
+    <string name="picture_style_light">Легкое</string>
+    <string name="picture_style_significant">Важное</string>
+    <string name="picture_style_dynamic">Динамичное</string>
+    <string name="picture_style_tender">Нежное</string>
+
+    <string name="result_download">Скачать</string>
+    <string name="result_image_creating">изображение создается…</string>
+    <string name="result_repeat">Повторить</string>
+</resources>
