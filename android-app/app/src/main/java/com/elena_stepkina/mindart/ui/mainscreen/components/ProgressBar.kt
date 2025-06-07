@@ -1,5 +1,6 @@
 package com.elena_stepkina.mindart.ui.mainscreen.components
 
+import Elena.Stepkina.MindArt.R
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -12,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -33,7 +35,7 @@ fun ProgressBar(
                     .height(4.dp)
                     .clip(RoundedCornerShape(4.dp))
                     .background(
-                        if (index <= currentStep) Color.Black else Color.Black.copy(alpha = 0.5f)
+                        if (index <= currentStep) colorResource(R.color.accent) else colorResource(R.color.accent).copy(alpha = 0.5f)
                     )
             )
         }
