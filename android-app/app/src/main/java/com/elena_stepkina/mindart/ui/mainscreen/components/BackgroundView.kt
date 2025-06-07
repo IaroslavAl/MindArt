@@ -1,6 +1,6 @@
 package com.elena_stepkina.mindart.ui.mainscreen.components
 
-import androidx.annotation.DrawableRes
+import Elena.Stepkina.MindArt.R
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
@@ -9,16 +9,25 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import com.elena_stepkina.mindart.ui.mainscreen.MainViewModel
 
 @Composable
 fun BackgroundView(
-    @DrawableRes imageRes: Int,
+    screenState: MainViewModel.ScreenState,
+    modifier: Modifier = Modifier,
     content: @Composable BoxScope.() -> Unit
 ) {
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-    ) {
+    val imageRes = when(screenState) {
+        MainViewModel.ScreenState.CreatedContentSelectionScreen -> R.drawable.bg1
+        MainViewModel.ScreenState.DisclaimerScreen -> R.drawable.bg2
+        MainViewModel.ScreenState.ColorSelectionScreenFirst -> R.drawable.bg3
+        MainViewModel.ScreenState.ColorSelectionScreenSecond -> R.drawable.bg4
+        MainViewModel.ScreenState.ColorSelectionScreenThird -> R.drawable.bg5
+        MainViewModel.ScreenState.PictureStyleSelectionScreen -> R.drawable.bg6
+        MainViewModel.ScreenState.ResultScreen -> R.drawable.bg3
+    }
+
+    Box(modifier = Modifier.fillMaxSize()) {
         Image(
             painter = painterResource(id = imageRes),
             contentDescription = null,
@@ -26,6 +35,8 @@ fun BackgroundView(
             modifier = Modifier
                 .fillMaxSize()
         )
-        content()
+        Box(modifier = modifier.fillMaxSize()) {
+            content()
+        }
     }
 }

@@ -13,6 +13,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.elena_stepkina.mindart.model.TaskType
 import com.elena_stepkina.mindart.ui.mainscreen.MainViewModel
+import com.elena_stepkina.mindart.ui.mainscreen.components.BackgroundView
 import com.elena_stepkina.mindart.ui.mainscreen.components.ButtonLabel
 import com.elena_stepkina.mindart.ui.mainscreen.components.TextView
 
@@ -22,7 +23,6 @@ fun CreatedContentSelectionScreen(viewModel: MainViewModel) {
         modifier = Modifier
             .fillMaxSize()
             .padding(horizontal = 32.dp),
-//            .background(color = AppTheme.colors.bg1),
         verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
