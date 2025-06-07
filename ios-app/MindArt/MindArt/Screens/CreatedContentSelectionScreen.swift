@@ -58,7 +58,7 @@ private extension CreatedContentSelectionScreen {
     }
 
     var buttons: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 20) {
             ForEach(TaskType.allCases) { taskType in
                 button(taskType)
             }
