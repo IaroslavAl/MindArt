@@ -13,8 +13,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.elena_stepkina.mindart.model.TaskType
 import com.elena_stepkina.mindart.ui.mainscreen.MainViewModel
-import com.elena_stepkina.mindart.ui.mainscreen.components.BackgroundView
-import com.elena_stepkina.mindart.ui.mainscreen.components.ButtonLabel
+import com.elena_stepkina.mindart.ui.mainscreen.components.CustomButton
 import com.elena_stepkina.mindart.ui.mainscreen.components.TextView
 
 @Composable
@@ -49,11 +48,11 @@ fun ButtonsSection(
 //                onClick = { onTaskSelected(taskType) }
 //            )
 //        }
-        ButtonLabel(
+        CustomButton(
             text = stringResource(R.string.created_content_goal),
             onClick = { onTaskSelected(TaskType.Goal) }
         )
-        ButtonLabel(
+        CustomButton(
             text = stringResource(R.string.created_content_memories),
             onClick = { onTaskSelected(TaskType.Memories) }
         )

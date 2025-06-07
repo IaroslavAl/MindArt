@@ -1,7 +1,6 @@
 package com.elena_stepkina.mindart.ui.mainscreen.screenStates
 
 import Elena.Stepkina.MindArt.R
-import com.elena_stepkina.mindart.ui.mainscreen.MainViewModel
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,7 +12,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.elena_stepkina.mindart.ui.mainscreen.components.ButtonLabel
+import com.elena_stepkina.mindart.ui.mainscreen.MainViewModel
+import com.elena_stepkina.mindart.ui.mainscreen.components.CustomButton
 import com.elena_stepkina.mindart.ui.mainscreen.components.TextView
 
 @Composable
@@ -35,7 +35,7 @@ fun ColorSelectionScreen(viewModel: MainViewModel) {
                 MainViewModel.ScreenState.PictureStyleSelectionScreen -> TextView("")
                 MainViewModel.ScreenState.ResultScreen -> TextView("")
             }
-            ButtonLabel(
+            CustomButton(
                 text = stringResource(R.string.disclaimer_continue),
                 onClick = { viewModel.goToNext() },
                 modifier = Modifier.padding(16.dp)

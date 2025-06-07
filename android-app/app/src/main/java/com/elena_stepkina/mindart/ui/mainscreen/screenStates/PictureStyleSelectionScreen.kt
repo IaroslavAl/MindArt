@@ -12,7 +12,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.elena_stepkina.mindart.model.EventType
 import com.elena_stepkina.mindart.ui.mainscreen.MainViewModel
-import com.elena_stepkina.mindart.ui.mainscreen.components.ButtonLabel
+import com.elena_stepkina.mindart.ui.mainscreen.components.CustomButton
 import com.elena_stepkina.mindart.ui.mainscreen.components.TextView
 
 @Composable
@@ -47,19 +47,19 @@ fun Buttons(onEventSelected: (EventType) -> Unit) {
 //                Text(text = stringResource(id = eventType.localizedResId))
 //            }
 //        }
-        ButtonLabel(
+        CustomButton(
             text = stringResource(R.string.picture_style_light),
             onClick = { onEventSelected(EventType.Light) }
         )
-        ButtonLabel(
+        CustomButton(
             text = stringResource(R.string.picture_style_significant),
             onClick = { onEventSelected(EventType.Significant) }
         )
-        ButtonLabel(
+        CustomButton(
             text = stringResource(R.string.picture_style_dynamic),
             onClick = { onEventSelected(EventType.Dynamic) }
         )
-        ButtonLabel(
+        CustomButton(
             text = stringResource(R.string.picture_style_tender),
             onClick = { onEventSelected(EventType.Tender) }
         )
