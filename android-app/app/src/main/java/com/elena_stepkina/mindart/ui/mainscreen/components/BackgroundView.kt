@@ -24,17 +24,20 @@ fun BackgroundView(
         MainViewModel.ScreenState.ColorSelectionScreenSecond -> R.drawable.bg4
         MainViewModel.ScreenState.ColorSelectionScreenThird -> R.drawable.bg5
         MainViewModel.ScreenState.PictureStyleSelectionScreen -> R.drawable.bg6
-        MainViewModel.ScreenState.ResultScreen -> R.drawable.bg3
+        MainViewModel.ScreenState.ResultScreen -> null
     }
 
     Box(modifier = Modifier.fillMaxSize()) {
-        Image(
-            painter = painterResource(id = imageRes),
-            contentDescription = null,
-            contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .fillMaxSize()
-        )
+        imageRes?.let {
+            painterResource(id = it) }?.let {
+            Image(
+                painter = it,
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .fillMaxSize()
+            )
+        }
         Box(modifier = modifier.fillMaxSize()) {
             content()
         }

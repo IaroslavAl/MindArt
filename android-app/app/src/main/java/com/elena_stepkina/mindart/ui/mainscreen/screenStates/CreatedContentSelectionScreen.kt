@@ -28,8 +28,8 @@ fun CreatedContentSelectionScreen(viewModel: MainViewModel) {
         Spacer(modifier = Modifier)
         TextView(stringResource(R.string.created_content_message))
         ButtonsSection(
-            onTaskSelected = { _ ->
-                // заменить
+            onTaskSelected = { taskType ->
+                viewModel.setTaskType(taskType)
                 viewModel.goToNext()
             }
         )
@@ -38,23 +38,17 @@ fun CreatedContentSelectionScreen(viewModel: MainViewModel) {
 }
 
 @Composable
-fun ButtonsSection(
-    onTaskSelected: (TaskType) -> Unit
-) {
+fun ButtonsSection(onTaskSelected: (TaskType) -> Unit) {
     Column(verticalArrangement = Arrangement.spacedBy(20.dp)) {
-//        TaskType.entries.forEach { taskType ->
-//            ButtonLabel(
-//                text = "taskType",
-//                onClick = { onTaskSelected(taskType) }
-//            )
-//        }
-        CustomButton(
-            text = stringResource(R.string.created_content_goal),
-            onClick = { onTaskSelected(TaskType.Goal) }
-        )
-        CustomButton(
-            text = stringResource(R.string.created_content_memories),
-            onClick = { onTaskSelected(TaskType.Memories) }
-        )
+        TaskType.entries.forEach { taskType ->
+            val text = when (taskType) {
+                TaskType.Goal -> stringResource(R.string.created_content_goal)
+                TaskType.Memories -> stringResource(R.string.created_content_memories)
+            }
+            CustomButton(
+                text = text,
+                onClick = { onTaskSelected(taskType) }
+            )
+        }
     }
 }

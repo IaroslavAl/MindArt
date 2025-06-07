@@ -28,7 +28,9 @@ fun DisclaimerScreen(viewModel: MainViewModel) {
         TextView(stringResource(R.string.disclaimer_info))
         CustomButton(
             text = stringResource(R.string.disclaimer_continue),
-            onClick = { viewModel.goToNext() }
+            onClick = {
+                viewModel.goToNext()
+            }
         )
         Spacer(modifier = Modifier)
     }

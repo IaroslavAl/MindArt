@@ -21,14 +21,13 @@ fun PictureStyleSelectionScreen(viewModel: MainViewModel) {
         modifier = Modifier
             .fillMaxSize()
             .padding(horizontal = 32.dp),
-//            .background(color = MaterialTheme.colorScheme.background),
         verticalArrangement = Arrangement.SpaceBetween
     ) {
         Spacer(modifier = Modifier)
         TextView(stringResource(R.string.picture_style_question))
         Buttons(
-            onEventSelected = { _ ->
-                // заменить
+            onEventSelected = { eventType ->
+                viewModel.setEventType(eventType)
                 viewModel.goToNext()
             }
         )
@@ -39,29 +38,17 @@ fun PictureStyleSelectionScreen(viewModel: MainViewModel) {
 @Composable
 fun Buttons(onEventSelected: (EventType) -> Unit) {
     Column(verticalArrangement = Arrangement.spacedBy(20.dp)) {
-//        EventType.values().forEach { eventType ->
-//            Button(
-//                onClick = { onEventSelected(eventType) },
-//                modifier = Modifier.fillMaxWidth()
-//            ) {
-//                Text(text = stringResource(id = eventType.localizedResId))
-//            }
-//        }
-        CustomButton(
-            text = stringResource(R.string.picture_style_light),
-            onClick = { onEventSelected(EventType.Light) }
-        )
-        CustomButton(
-            text = stringResource(R.string.picture_style_significant),
-            onClick = { onEventSelected(EventType.Significant) }
-        )
-        CustomButton(
-            text = stringResource(R.string.picture_style_dynamic),
-            onClick = { onEventSelected(EventType.Dynamic) }
-        )
-        CustomButton(
-            text = stringResource(R.string.picture_style_tender),
-            onClick = { onEventSelected(EventType.Tender) }
-        )
+        EventType.entries.forEach { eventType ->
+            val text = when (eventType) {
+                EventType.Light -> stringResource(R.string.picture_style_light)
+                EventType.Significant -> stringResource(R.string.picture_style_significant)
+                EventType.Dynamic -> stringResource(R.string.picture_style_dynamic)
+                EventType.Tender -> stringResource(R.string.picture_style_tender)
+            }
+            CustomButton(
+                text = text,
+                onClick = { onEventSelected(eventType) }
+            )
+        }
     }
 }
