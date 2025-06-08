@@ -1,6 +1,5 @@
 package com.elena_stepkina.mindart.ui.mainscreen.screenStates
 
-import Elena.Stepkina.MindArt.R
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -29,6 +28,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.elena_stepkina.mindart.R
 import com.elena_stepkina.mindart.model.CustomColor
 import com.elena_stepkina.mindart.model.TaskType
 import com.elena_stepkina.mindart.ui.mainscreen.MainViewModel

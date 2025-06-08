@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "Elena.Stepkina.MindArt"
+    namespace = "com.elena_stepkina.mindart"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "Elena.Stepkina.MindArt"
+        applicationId = "com.elena_stepkina.mindart"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -25,11 +25,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -47,6 +47,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.ads.mobile.sdk)
+    implementation(libs.lottie)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

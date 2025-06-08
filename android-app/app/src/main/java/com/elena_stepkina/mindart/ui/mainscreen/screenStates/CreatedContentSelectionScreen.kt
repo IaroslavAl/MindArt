@@ -1,6 +1,5 @@
 package com.elena_stepkina.mindart.ui.mainscreen.screenStates
 
-import Elena.Stepkina.MindArt.R
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -11,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.elena_stepkina.mindart.R
 import com.elena_stepkina.mindart.model.TaskType
 import com.elena_stepkina.mindart.ui.mainscreen.MainViewModel
 import com.elena_stepkina.mindart.ui.mainscreen.components.CustomButton

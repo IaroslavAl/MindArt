@@ -1,6 +1,5 @@
 package com.elena_stepkina.mindart.ui.mainscreen.components
 
-import Elena.Stepkina.MindArt.R
 import android.annotation.SuppressLint
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -10,6 +9,7 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.elena_stepkina.mindart.R
 
 @Composable
 fun TextView(

@@ -1,6 +1,5 @@
 package com.elena_stepkina.mindart.ui.mainscreen.components
 
-import Elena.Stepkina.MindArt.R
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
@@ -9,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import com.elena_stepkina.mindart.R
 import com.elena_stepkina.mindart.ui.mainscreen.MainViewModel
 
 @Composable
@@ -28,8 +28,7 @@ fun BackgroundView(
     }
 
     Box(modifier = Modifier.fillMaxSize()) {
-        imageRes?.let {
-            painterResource(id = it) }?.let {
+        imageRes?.let { painterResource(id = it) }?.let {
             Image(
                 painter = it,
                 contentDescription = null,
