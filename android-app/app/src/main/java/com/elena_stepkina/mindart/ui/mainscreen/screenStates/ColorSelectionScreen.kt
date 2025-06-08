@@ -62,7 +62,9 @@ fun ColorSelectionScreen(viewModel: MainViewModel) {
     ) {
         Spacer(modifier = Modifier)
 
-        stringResource?.let { stringResource(it) }?.let { TextView(it) }
+        stringResource?.let { stringResource(it) }?.let {
+            TextView(text = it, dynamicText = true)
+        }
 
         ColorsView { customColor ->
             viewModel.setColor(customColor.name)

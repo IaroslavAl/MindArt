@@ -1,6 +1,7 @@
 package com.elena_stepkina.mindart.ui.mainscreen
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -18,7 +19,11 @@ fun MainScreen(viewModel: MainViewModel, modifier: Modifier) {
     val screenState by viewModel.screenState.collectAsState()
 
     BackgroundView(screenState = screenState, modifier = modifier) {
-        Box {
+        Column {
+            ProgressBar(
+                currentStep = screenState.ordinal,
+                totalSteps = MainViewModel.ScreenState.entries.size
+            )
             when (screenState) {
                 MainViewModel.ScreenState.CreatedContentSelectionScreen -> CreatedContentSelectionScreen(viewModel)
                 MainViewModel.ScreenState.DisclaimerScreen -> DisclaimerScreen(viewModel)
@@ -28,11 +33,6 @@ fun MainScreen(viewModel: MainViewModel, modifier: Modifier) {
                 MainViewModel.ScreenState.PictureStyleSelectionScreen -> PictureStyleSelectionScreen(viewModel)
                 MainViewModel.ScreenState.ResultScreen -> ResultScreen(viewModel)
             }
-
-            ProgressBar(
-                currentStep = screenState.ordinal,
-                totalSteps = MainViewModel.ScreenState.entries.size
-            )
         }
     }
 }

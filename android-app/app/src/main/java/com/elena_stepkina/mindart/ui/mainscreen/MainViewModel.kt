@@ -1,6 +1,5 @@
 package com.elena_stepkina.mindart.ui.mainscreen
 
-import Elena.Stepkina.MindArt.R
 import androidx.lifecycle.ViewModel
 import com.elena_stepkina.mindart.model.EventType
 import com.elena_stepkina.mindart.model.TaskType
