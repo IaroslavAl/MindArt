@@ -23,7 +23,6 @@ enum Requests {
                 URLQueryItem(name: "color3", value: color3),
                 URLQueryItem(name: "style", value: style),
             ]
-            print(components.url)
             var request = URLRequest(url: components.url!)
             request.httpMethod = "GET"
 
