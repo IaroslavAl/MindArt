@@ -13,6 +13,7 @@ import com.elena_stepkina.mindart.R
 import com.elena_stepkina.mindart.ui.mainscreen.MainViewModel
 import com.elena_stepkina.mindart.ui.mainscreen.components.AnimationView
 import com.elena_stepkina.mindart.ui.mainscreen.components.CustomButton
+import com.elena_stepkina.mindart.ui.mainscreen.components.TextView
 
 @Composable
 fun ResultScreen(viewModel: MainViewModel) {
@@ -28,17 +29,18 @@ fun ResultScreen(viewModel: MainViewModel) {
         ) {
             AnimationView()
         }
-        Column {
-            CustomButton(
-                text = stringResource(R.string.result_download),
-                modifier = Modifier.padding(bottom = 16.dp),
-                onClick = { viewModel.goToNext() }
-            )
-            CustomButton(
-                text = stringResource(R.string.result_repeat),
-                modifier = Modifier.padding(bottom = 32.dp),
-                onClick = { viewModel.goToNext() }
-            )
+        Box(modifier = Modifier.padding(bottom = 32.dp)) {
+            TextView(stringResource(R.string.result_image_creating))
+//            CustomButton(
+//                text = stringResource(R.string.result_download),
+//                modifier = Modifier.padding(bottom = 16.dp),
+//                onClick = { viewModel.goToNext() }
+//            )
+//            CustomButton(
+//                text = stringResource(R.string.result_repeat),
+//                modifier = Modifier.padding(bottom = 32.dp),
+//                onClick = { viewModel.goToNext() }
+//            )
         }
     }
 }

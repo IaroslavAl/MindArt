@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A388C4962DF5A9F800A5C5D0 /* SwiftyGif in Frameworks */ = {isa = PBXBuildFile; productRef = A388C4952DF5A9F800A5C5D0 /* SwiftyGif */; };
+		A388C4EE2DF5BCEA00A5C5D0 /* SwiftUIGIF in Frameworks */ = {isa = PBXBuildFile; productRef = A388C4ED2DF5BCEA00A5C5D0 /* SwiftUIGIF */; };
 		A3C423BB2DEAF3A40025BB27 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A3C423BA2DEAF3A40025BB27 /* Lottie */; };
 		A3C423C02DEAF53E0025BB27 /* AppMetricaAdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = A3C423BF2DEAF53E0025BB27 /* AppMetricaAdSupport */; };
 		A3C423C22DEAF53E0025BB27 /* AppMetricaCore in Frameworks */ = {isa = PBXBuildFile; productRef = A3C423C12DEAF53E0025BB27 /* AppMetricaCore */; };
@@ -92,7 +94,9 @@
 				A3C423BB2DEAF3A40025BB27 /* Lottie in Frameworks */,
 				A3C423C42DEAF53E0025BB27 /* AppMetricaCrashes in Frameworks */,
 				A3C423C22DEAF53E0025BB27 /* AppMetricaCore in Frameworks */,
+				A388C4EE2DF5BCEA00A5C5D0 /* SwiftUIGIF in Frameworks */,
 				A3C423CA2DEAF53E0025BB27 /* AppMetricaWebKit in Frameworks */,
+				A388C4962DF5A9F800A5C5D0 /* SwiftyGif in Frameworks */,
 				A3C423C02DEAF53E0025BB27 /* AppMetricaAdSupport in Frameworks */,
 				A3C423C62DEAF53E0025BB27 /* AppMetricaLibraryAdapter in Frameworks */,
 			);
@@ -171,6 +175,8 @@
 				A3C423C52DEAF53E0025BB27 /* AppMetricaLibraryAdapter */,
 				A3C423C72DEAF53E0025BB27 /* AppMetricaScreenshot */,
 				A3C423C92DEAF53E0025BB27 /* AppMetricaWebKit */,
+				A388C4952DF5A9F800A5C5D0 /* SwiftyGif */,
+				A388C4ED2DF5BCEA00A5C5D0 /* SwiftUIGIF */,
 			);
 			productName = MindArt;
 			productReference = A38061D52CD291E3009387FB /* MindArt.app */;
@@ -258,6 +264,8 @@
 			packageReferences = (
 				A3C423B92DEAF3A40025BB27 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				A3C423BE2DEAF53E0025BB27 /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */,
+				A388C4942DF5A9F800A5C5D0 /* XCRemoteSwiftPackageReference "SwiftyGif" */,
+				A388C4EC2DF5BCEA00A5C5D0 /* XCRemoteSwiftPackageReference "swiftui-gif" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A38061D62CD291E3009387FB /* Products */;
@@ -644,6 +652,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A388C4942DF5A9F800A5C5D0 /* XCRemoteSwiftPackageReference "SwiftyGif" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:alexiscreuzot/SwiftyGif.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.5;
+			};
+		};
+		A388C4EC2DF5BCEA00A5C5D0 /* XCRemoteSwiftPackageReference "swiftui-gif" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:globulus/swiftui-gif.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
 		A3C423B92DEAF3A40025BB27 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:airbnb/lottie-ios.git";
@@ -663,6 +687,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A388C4952DF5A9F800A5C5D0 /* SwiftyGif */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A388C4942DF5A9F800A5C5D0 /* XCRemoteSwiftPackageReference "SwiftyGif" */;
+			productName = SwiftyGif;
+		};
+		A388C4ED2DF5BCEA00A5C5D0 /* SwiftUIGIF */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A388C4EC2DF5BCEA00A5C5D0 /* XCRemoteSwiftPackageReference "swiftui-gif" */;
+			productName = SwiftUIGIF;
+		};
 		A3C423BA2DEAF3A40025BB27 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A3C423B92DEAF3A40025BB27 /* XCRemoteSwiftPackageReference "lottie-ios" */;

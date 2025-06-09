@@ -1,5 +1,5 @@
 {
-  "originHash" : "969d31c438236c02cb387ce55665a19d037e100a032cb3793031b8930727b552",
+  "originHash" : "de7155b269608e9131a89ad691fc835126b50fa367e6bb73e06b53ac1b645ccd",
   "pins" : [
     {
       "identity" : "appmetrica-sdk-ios",
@@ -26,6 +26,24 @@
       "state" : {
         "revision" : "a004050748dc197c56256a14dca49a035d74726c",
         "version" : "4.5.2"
+      }
+    },
+    {
+      "identity" : "swiftui-gif",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:globulus/swiftui-gif.git",
+      "state" : {
+        "revision" : "471d37db548e79bdd62e7702dbceaf28ea1103f9",
+        "version" : "1.1.0"
+      }
+    },
+    {
+      "identity" : "swiftygif",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:alexiscreuzot/SwiftyGif.git",
+      "state" : {
+        "revision" : "4430cbc148baa3907651d40562d96325426f409a",
+        "version" : "5.4.5"
       }
     }
   ],

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Lottie
+import SwiftUIGIF
 
 struct ResultScreen: View {
     @EnvironmentObject
@@ -29,9 +30,9 @@ struct ResultScreen: View {
         .transition(.opacity)
         .animation(.easeInOut(duration: 0.25), value: viewModel.resultScreenState)
         .task {
-            viewModel.send(.loadImageData)
+//            viewModel.send(.loadImageData)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+//        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
@@ -39,12 +40,7 @@ private extension ResultScreen {
     var loadingView: some View {
         VStack(spacing: .zero) {
             Spacer()
-            Lottie.LottieView {
-                try await DotLottieFile.named("LottieAnimation.lottie")
-            } placeholder: {
-                Color.clear
-            }
-            .looping()
+            GIFImage(name: "loading")
             Spacer()
             TextView(
                 .init("ResultScreen.ImageCreating"),
@@ -73,7 +69,7 @@ private extension ResultScreen {
             }
         }
         .padding(32)
-        .background(background.ignoresSafeArea())
+//        .background(background.ignoresSafeArea())
         .onAppear {
             Analytics.log(name: "ImageShown")
         }
