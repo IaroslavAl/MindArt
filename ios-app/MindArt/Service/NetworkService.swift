@@ -31,29 +31,26 @@ struct NetworkService {
     ) async throws -> Data {
         let maxAttempts = 3
 
-        try? await Task.sleep(for: .seconds(5))
-        throw Error.loadingFailed
+        for attempt in 0...maxAttempts {
+            do {
+                let request = Requests.generateImageRequest(
+                    color1: color1,
+                    color2: color2,
+                    color3: color3,
+                    style: style
+                ).request
 
-//        for attempt in 0...maxAttempts {
-//            do {
-//                let request = Requests.generateImageRequest(
-//                    color1: color1,
-//                    color2: color2,
-//                    color3: color3,
-//                    style: style
-//                ).request
-//
-//                let imageData = try await performData(request)
-//
-//                return imageData
-//            } catch {
-//                if attempt == maxAttempts {
-//                    throw Error.loadingFailed
-//                } else {
-//                    try await Task.sleep(for: .seconds(1))
-//                }
-//            }
-//        }
+                let imageData = try await performData(request)
+
+                return imageData
+            } catch {
+                if attempt == maxAttempts {
+                    throw Error.loadingFailed
+                } else {
+                    try await Task.sleep(for: .seconds(1))
+                }
+            }
+        }
 
         throw Error.loadingFailed
     }

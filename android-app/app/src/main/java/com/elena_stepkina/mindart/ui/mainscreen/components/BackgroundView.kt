@@ -11,22 +11,22 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import com.elena_stepkina.mindart.R
-import com.elena_stepkina.mindart.ui.mainscreen.MainViewModel
+import com.elena_stepkina.mindart.model.MainScreenState
 
 @Composable
 fun BackgroundView(
-    screenState: MainViewModel.ScreenState,
+    screenState: MainScreenState,
     modifier: Modifier = Modifier,
     content: @Composable BoxScope.() -> Unit
 ) {
     val imageRes = when(screenState) {
-        MainViewModel.ScreenState.CreatedContentSelectionScreen -> R.drawable.bg1
-        MainViewModel.ScreenState.DisclaimerScreen -> R.drawable.bg2
-        MainViewModel.ScreenState.ColorSelectionScreenFirst -> R.drawable.bg3
-        MainViewModel.ScreenState.ColorSelectionScreenSecond -> R.drawable.bg4
-        MainViewModel.ScreenState.ColorSelectionScreenThird -> R.drawable.bg5
-        MainViewModel.ScreenState.PictureStyleSelectionScreen -> R.drawable.bg6
-        MainViewModel.ScreenState.ResultScreen -> null
+        MainScreenState.SelectContent -> R.drawable.bg1
+        MainScreenState.Disclaimer -> R.drawable.bg2
+        MainScreenState.SelectFirstColor -> R.drawable.bg3
+        MainScreenState.SelectSecondColor -> R.drawable.bg4
+        MainScreenState.SelectThirdColor -> R.drawable.bg5
+        MainScreenState.SelectPictureStyle -> R.drawable.bg6
+        MainScreenState.Result -> null
     }
 
     Box(modifier = Modifier.fillMaxSize()) {

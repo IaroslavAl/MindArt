@@ -2,24 +2,15 @@ package com.elena_stepkina.mindart.ui.mainscreen
 
 import androidx.lifecycle.ViewModel
 import com.elena_stepkina.mindart.model.EventType
+import com.elena_stepkina.mindart.model.MainScreenState
 import com.elena_stepkina.mindart.model.TaskType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
 class MainViewModel: ViewModel() {
-    enum class ScreenState {
-        CreatedContentSelectionScreen,
-        DisclaimerScreen,
-        ColorSelectionScreenFirst,
-        ColorSelectionScreenSecond,
-        ColorSelectionScreenThird,
-        PictureStyleSelectionScreen,
-        ResultScreen
-    }
-
-    private val _screenState = MutableStateFlow(ScreenState.CreatedContentSelectionScreen)
-    val screenState: StateFlow<ScreenState> = _screenState.asStateFlow()
+    private val _screenState = MutableStateFlow(MainScreenState.SelectContent)
+    val screenState: StateFlow<MainScreenState> = _screenState.asStateFlow()
 
     private val _taskType = MutableStateFlow(TaskType.Goal)
     val taskType: StateFlow<TaskType> = _taskType.asStateFlow()
@@ -38,8 +29,8 @@ class MainViewModel: ViewModel() {
 
     fun goToNext() {
         val currentOrdinal = screenState.value.ordinal
-        val nextOrdinal = (currentOrdinal + 1) % ScreenState.entries.size
-        _screenState.value = ScreenState.entries.toTypedArray()[nextOrdinal]
+        val nextOrdinal = (currentOrdinal + 1) % MainScreenState.entries.size
+        _screenState.value = MainScreenState.entries.toTypedArray()[nextOrdinal]
     }
 
     fun setTaskType(taskType: TaskType) {
@@ -52,9 +43,9 @@ class MainViewModel: ViewModel() {
 
     fun setColor(color: String) {
         when (_screenState.value) {
-            ScreenState.ColorSelectionScreenFirst -> _color1.value = color
-            ScreenState.ColorSelectionScreenSecond -> _color2.value = color
-            ScreenState.ColorSelectionScreenThird -> _color3.value = color
+            MainScreenState.SelectFirstColor -> _color1.value = color
+            MainScreenState.SelectSecondColor -> _color2.value = color
+            MainScreenState.SelectThirdColor -> _color3.value = color
             else -> {}
         }
     }

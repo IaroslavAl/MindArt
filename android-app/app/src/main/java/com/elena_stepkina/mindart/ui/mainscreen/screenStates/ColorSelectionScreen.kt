@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.elena_stepkina.mindart.R
 import com.elena_stepkina.mindart.model.CustomColor
+import com.elena_stepkina.mindart.model.MainScreenState
 import com.elena_stepkina.mindart.model.TaskType
 import com.elena_stepkina.mindart.ui.mainscreen.MainViewModel
 import com.elena_stepkina.mindart.ui.mainscreen.components.TextView
@@ -40,15 +41,15 @@ fun ColorSelectionScreen(viewModel: MainViewModel) {
     val taskType by viewModel.taskType.collectAsState()
     val stringResource = when (taskType) {
         TaskType.Goal -> when (screenState) {
-            MainViewModel.ScreenState.ColorSelectionScreenFirst -> R.string.color_selection_goal_first_question
-            MainViewModel.ScreenState.ColorSelectionScreenSecond -> R.string.color_selection_goal_second_question
-            MainViewModel.ScreenState.ColorSelectionScreenThird -> R.string.color_selection_goal_third_question
+            MainScreenState.SelectFirstColor -> R.string.color_selection_goal_first_question
+            MainScreenState.SelectSecondColor -> R.string.color_selection_goal_second_question
+            MainScreenState.SelectThirdColor -> R.string.color_selection_goal_third_question
             else -> null
         }
         TaskType.Memories -> when (screenState) {
-            MainViewModel.ScreenState.ColorSelectionScreenFirst -> R.string.color_selection_memories_first_question
-            MainViewModel.ScreenState.ColorSelectionScreenSecond -> R.string.color_selection_memories_second_question
-            MainViewModel.ScreenState.ColorSelectionScreenThird -> R.string.color_selection_memories_third_question
+            MainScreenState.SelectFirstColor -> R.string.color_selection_memories_first_question
+            MainScreenState.SelectSecondColor -> R.string.color_selection_memories_second_question
+            MainScreenState.SelectThirdColor -> R.string.color_selection_memories_third_question
             else -> null
         }
     }

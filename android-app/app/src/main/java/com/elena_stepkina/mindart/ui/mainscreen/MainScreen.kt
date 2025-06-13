@@ -5,6 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import com.elena_stepkina.mindart.model.MainScreenState
 import com.elena_stepkina.mindart.ui.mainscreen.components.BackgroundView
 import com.elena_stepkina.mindart.ui.mainscreen.components.ProgressBar
 import com.elena_stepkina.mindart.ui.mainscreen.screenStates.ColorSelectionScreen
@@ -21,16 +22,16 @@ fun MainScreen(viewModel: MainViewModel, modifier: Modifier) {
         Column {
             ProgressBar(
                 currentStep = screenState.ordinal,
-                totalSteps = MainViewModel.ScreenState.entries.size
+                totalSteps = MainScreenState.entries.size
             )
             when (screenState) {
-                MainViewModel.ScreenState.CreatedContentSelectionScreen -> CreatedContentSelectionScreen(viewModel)
-                MainViewModel.ScreenState.DisclaimerScreen -> DisclaimerScreen(viewModel)
-                MainViewModel.ScreenState.ColorSelectionScreenFirst -> ColorSelectionScreen(viewModel)
-                MainViewModel.ScreenState.ColorSelectionScreenSecond -> ColorSelectionScreen(viewModel)
-                MainViewModel.ScreenState.ColorSelectionScreenThird -> ColorSelectionScreen(viewModel)
-                MainViewModel.ScreenState.PictureStyleSelectionScreen -> PictureStyleSelectionScreen(viewModel)
-                MainViewModel.ScreenState.ResultScreen -> ResultScreen(viewModel)
+                MainScreenState.SelectContent -> CreatedContentSelectionScreen(viewModel)
+                MainScreenState.Disclaimer -> DisclaimerScreen(viewModel)
+                MainScreenState.SelectFirstColor -> ColorSelectionScreen(viewModel)
+                MainScreenState.SelectSecondColor -> ColorSelectionScreen(viewModel)
+                MainScreenState.SelectThirdColor -> ColorSelectionScreen(viewModel)
+                MainScreenState.SelectPictureStyle -> PictureStyleSelectionScreen(viewModel)
+                MainScreenState.Result -> ResultScreen(viewModel)
             }
         }
     }
