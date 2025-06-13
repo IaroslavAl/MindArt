@@ -1,4 +1,4 @@
-package com.elena_stepkina.mindart.ui.mainscreen.screenStates
+package com.elena_stepkina.mindart.ui.mainscreen.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,12 +10,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.elena_stepkina.mindart.R
-import com.elena_stepkina.mindart.ui.mainscreen.MainViewModel
-import com.elena_stepkina.mindart.ui.mainscreen.components.AnimationView
-import com.elena_stepkina.mindart.ui.mainscreen.components.TextView
 
 @Composable
-fun LoadingScreen(viewModel: MainViewModel) {
+fun LoadingView() {
     Column(
         modifier = Modifier
             .fillMaxSize()

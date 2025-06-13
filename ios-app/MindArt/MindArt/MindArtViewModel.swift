@@ -117,14 +117,12 @@ private extension MindArtViewModel {
         Task {
             do {
                 let service = NetworkService()
-                print(#function, "generateImage")
                 let imageData = try await service.generateImage(
                     color1: color1 ?? "",
                     color2: color2 ?? "",
                     color3: color3 ?? "",
                     style: style ?? ""
                 )
-                print(#function, "writeData")
                 writeData(imageData)
                 resultScreenState = .loaded
             } catch {
@@ -133,7 +131,6 @@ private extension MindArtViewModel {
                     writeData(data)
                     resultScreenState = .error
                 }
-                print("Error in loadImageData: \(error.localizedDescription)")
                 Analytics.log(name: "LoadImageError")
             }
         }
@@ -146,8 +143,6 @@ private extension MindArtViewModel {
         do {
             try data.write(to: fileURL)
             self.url = fileURL
-        } catch {
-            print("Error saving file: \(error.localizedDescription)")
-        }
+        } catch {}
     }
 }

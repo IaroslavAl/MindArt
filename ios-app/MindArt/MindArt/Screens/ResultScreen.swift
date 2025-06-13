@@ -30,9 +30,9 @@ struct ResultScreen: View {
         .transition(.opacity)
         .animation(.easeInOut(duration: 0.25), value: viewModel.resultScreenState)
         .task {
-//            viewModel.send(.loadImageData)
+            viewModel.send(.loadImageData)
         }
-//        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
@@ -69,7 +69,7 @@ private extension ResultScreen {
             }
         }
         .padding(32)
-//        .background(background.ignoresSafeArea())
+        .background(background.ignoresSafeArea())
         .onAppear {
             Analytics.log(name: "ImageShown")
         }
