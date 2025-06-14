@@ -56,7 +56,7 @@ fun ResultScreen(viewModel: MainViewModel) {
             ResultScreenState.Loading -> LoadingView()
             ResultScreenState.Loaded -> LoadedView(
                 imageData = imageData,
-                onDownload = { imageData?.let { viewModel.saveImageToStorage(context = context, imageData = it) } },
+                onDownload = { imageData?.let { viewModel.saveImageAndShare(context = context, imageData = it) } },
                 onRepeat = { viewModel.goToNext() }
             )
             ResultScreenState.Error -> ErrorView(
